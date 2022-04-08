@@ -1,0 +1,376 @@
+@charset "UTF-8";
+@use "sass:math";
+
+// 注 割り算は「/」を使わずに「math.div()」を使うこと！
+// 例 「2/3」 → 「math.div(2,3)」
+//    ※変数も使える。 例 「math.div(100, $var)」
+
+$img_path : '../../img/';
+$page_num : '5011-1/';
+
+/******** page base ********/
+
+section.practice {
+  padding-top: 40px;
+
+  .title {
+    font-size: 32px;
+    border-bottom: 2px solid #DCDDDC;
+    padding-bottom: 14px;
+    position: relative;
+    width: 100%;
+
+    &::after {
+      content: "";
+      display: block;
+      line-height: 0;
+      overflow: hidden;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 50px;
+    }
+  }
+
+  .top_desc {
+    font-size: 24px;
+    line-height: 1.6;
+    margin-top: 15px;
+  }
+
+  .top_area {
+    margin-top: 40px;
+    position: relative;
+
+    .audio_area {
+      text-align: center;
+
+      audio {
+        height: 53px;
+        width: 398px;
+      }
+    }
+
+    .jp_en_btn {
+      background-color: #F0F0F0;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      position: absolute;
+      top: 5px;
+      right: 0;
+      width: 176px;
+
+      .jp,
+      .en {
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        height: 30px;
+        line-height: 2;
+        text-align: center;
+        transition: opacity 0.5s ease;
+        width: 78px;
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        &.on {
+          background-color: #A0A0A0;
+          border-radius: 15px;
+          color: #ffffff;
+        }
+      }
+
+      .en {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .conv {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 40px auto 0;
+    padding: 10px 20px 10px 44px;
+    position: relative;
+    width: 602px;
+
+    &.first {
+      margin-top: 56px;
+    }
+
+    .person_icon {
+      position: absolute;
+      top: 0;
+      width: 80px;
+    }
+
+    &.left {
+      left: -6px;
+
+      .person_icon {
+        left: -90px;
+      }
+    }
+
+    &.right {
+      padding-left: 32px;
+      right: -6px;
+
+      .person_icon {
+        right: -90px;
+      }
+    }
+  }
+
+  .conv_box {
+    .txt {
+      display: none;
+      font-size: 24px;
+
+      &.on {
+        display: block;
+      }
+
+      span {
+        background-color: #ffffff;
+        border-radius: 5px;
+        display: inline-block;
+        margin: 5px 5px 5px 0;
+        padding: 5px 10px;
+      }
+    }
+
+    .line {
+      background-color: #000000;
+      height: 1px;
+      margin: 8px 0 5px;
+    }
+  }
+}
+
+
+
+/******** section.practice ********/
+
+section.practice {
+  .title {
+    &::after {
+      border-bottom: 2px solid #643477;
+    }
+  }
+
+  .conv {
+    &.conv_1 {
+      background-image: url($img_path + $page_num + 'bg_conv_01.png');
+
+      .person_icon {
+        top: -10px;
+      }
+
+      &.active {
+        background-image: url($img_path + $page_num + 'bg_conv_01_active.png');
+      }
+    }
+    &.conv_2 {
+      background-image: url($img_path + $page_num + 'bg_conv_02.png');
+
+      .person_icon {
+        top: 10px;
+      }
+
+      &.active {
+        background-image: url($img_path + $page_num + 'bg_conv_02_active.png');
+      }
+    }
+    &.conv_3 {
+      background-image: url($img_path + $page_num + 'bg_conv_03.png');
+
+      &.active {
+        background-image: url($img_path + $page_num + 'bg_conv_03_active.png');
+      }
+    }
+    &.conv_4 {
+      background-image: url($img_path + $page_num + 'bg_conv_04.png');
+
+      .person_icon {
+        top: -5px;
+      }
+
+      &.active {
+        background-image: url($img_path + $page_num + 'bg_conv_04_active.png');
+      }
+    }
+    &.conv_5 {
+      background-image: url($img_path + $page_num + 'bg_conv_05.png');
+
+      &.active {
+        background-image: url($img_path + $page_num + 'bg_conv_05_active.png');
+      }
+    }
+    &.conv_6 {
+      background-image: url($img_path + $page_num + 'bg_conv_06.png');
+
+      .person_icon {
+        top: 10px;
+      }
+
+      &.active {
+        background-image: url($img_path + $page_num + 'bg_conv_06_active.png');
+      }
+    }
+    &.conv_7 {
+      background-image: url($img_path + $page_num + 'bg_conv_07.png');
+
+      .person_icon {
+        top: 33px;
+      }
+
+      &.active {
+        background-image: url($img_path + $page_num + 'bg_conv_07_active.png');
+      }
+    }
+    &.conv_8 {
+      background-image: url($img_path + $page_num + 'bg_conv_08.png');
+
+      .person_icon {
+        top: 10px;
+      }
+
+      &.active {
+        background-image: url($img_path + $page_num + 'bg_conv_08_active.png');
+      }
+    }
+
+    .line {
+      width: 470px;
+    }
+  }
+}
+
+
+
+
+
+// sp用追記
+
+$var : 0.8533;
+
+section.practice {
+  .title {
+    font-size: calc(34px * $var);
+    &::after {
+      width: calc(101px * $var);
+    }
+  }
+  .top_desc {
+    font-size: calc(27px * $var);
+  }
+  .top_area {
+    margin-top: calc(55px * $var);
+    margin-bottom: 0;
+    .audio_area {
+      display: block;
+      background: none;
+      padding: 0;
+      margin: 0;
+      height: initial;
+      margin-bottom: calc(40px *$var);
+      audio {
+        width: calc(570px * $var);
+        height: calc(65px * $var);
+      }
+    }
+    .jp_en_btn {
+      width: calc(338px * $var);
+      height: calc(65px * $var);
+      margin-left: auto;
+      border-radius: calc(32.5px * $var);
+      position: relative;
+      column-gap: calc(30px * $var);
+      padding-right: 20px;
+      .jp.on {
+        width: calc(158.27px * $var);
+        height: calc(50px * $var);
+        border-radius: calc(25px * $var);
+        font-size: calc(22px * $var);
+      }
+      .en {
+        font-size: calc(22px * $var);
+      }
+    }
+  }
+  .conv {
+    width: calc(584.2px * $var);
+    margin-top: calc(48px * $var);
+    padding: 13px 20px 13px 44px;
+    .person_icon {
+      width: calc(95px * $var);
+    }
+    .conv_box {
+      .txt {
+        font-size: calc(27px * $var);
+        line-height: calc(2.07 * $var);
+        span {
+          line-height: calc(35px * $var);
+        }
+      }
+      // .txt.jp.on {
+      //   display: none;
+      // }
+      // .txt.en {
+      //   display: block;
+      // }
+      .line {
+        width: calc(500px * $var);
+      }
+    }
+  }
+  .conv.first {
+    margin-top: calc(60px * $var);
+  }
+  
+  .conv.left {
+    margin-right: 0;
+    left: initial;
+    .person_icon {
+      left: calc(-106px * $var);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .conv.right {
+    right: initial;
+    margin-left: 0;
+    padding-left: 28px;
+    .person_icon {
+      right: calc(-106px * $var);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  // 改行
+  .conv.conv_7 {
+    .conv_box {
+      p {
+        &:nth-of-type(3) {
+          width: 250px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
